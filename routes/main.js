@@ -6,11 +6,9 @@ main.post('/register',require('./user/register'))
 main.post('/login', require('./user/login'))
 // 角色管理
 main.post('/user-role/add-role',require('./userRole/addRole'))
-
-
-
-
-
+main.get('/user-role/add-role',require('./userRole/getRole'))
+main.put('/user-role/add-role',require('./userRole/putRole'))
+main.delete('/user-role/add-role',require('./userRole/deleRole'))
 
 
 

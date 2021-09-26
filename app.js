@@ -63,13 +63,13 @@ app.use('/api', (req, res, next) => {
         // token时间戳
         const username = jwt.decode(token, 'DingNing').username
         // 当前时间戳
-        var TimeData = jwt.decode(token, 'DingNing').iat
-        var timeNow = Math.floor(Date.now() / 1000);
+        var TimeData = jwt.decode(token, 'DingNing').iat.toString()
+        var timeNow = Math.floor(Date.now() / 1000).toString()
         let p1 = new Date(TimeData).toDateString()
         let p2 = new Date(timeNow).toDateString()
+        // console.log(TimeData.substring(0, 5), timeNow.substring(0, 5), '00000000000000');
         if (!p1 == p2) {
             res.status(400).send({
-                data: null,
                 meta: {
                     msg: "登录已经过期了，重新登录吧！！！",
                     status: 400
@@ -87,9 +87,9 @@ app.use('/api', (req, res, next) => {
                 next()
             } else {
                 res.status(400).send({
-                    data: null,
+                    role: username,
                     meta: {
-                        msg: "token已经不能使用",
+                        msg: "token已经不能使用,重新登录吧",
                         status: 400
                     }
                 })

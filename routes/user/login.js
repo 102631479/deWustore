@@ -44,9 +44,6 @@ module.exports = async (req, res) => {
     const token = jwt.sign({
         username
     }, 'DingNing')
-
-
-
     await tokenReturn.update({
         token: token
     }, {

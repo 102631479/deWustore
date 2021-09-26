@@ -8,22 +8,22 @@ const PlatformAccount = sequelize.define('PlatformAccount', {
         type: Sequelize.STRING,
         allowNull: true,
     },
-    // 用户id
+    // 名字
     Rolename: {
         type: Sequelize.STRING,
         allowNull: false,
     },
-    // 用户类型
+    // 平台
     RoleType: {
         type: Sequelize.STRING,
         allowNull: false,
     },
-    // 用户账号
+    // 手机
     RolePhone: {
         type: Sequelize.STRING,
         allowNull: false,
     },
-    // 用户备注
+    // 备注
     RoleRemarks: {
         type: Sequelize.STRING,
         allowNull: true,
