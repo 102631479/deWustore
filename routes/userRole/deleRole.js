@@ -9,7 +9,6 @@ module.exports = async (req, res) => {
         where: {
             ['username']: username,
             ['id']: req.query.id
-
         }
     })
     if (model) {
@@ -27,7 +26,6 @@ module.exports = async (req, res) => {
                 }
             })
         });
-
     } else {
         res.status(400).send({
             role: username,

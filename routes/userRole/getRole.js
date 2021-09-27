@@ -13,6 +13,9 @@ module.exports = async (req, res) => {
     }).then(d => {
         res.status(200).send({
             data: d,
+            extent: d.length,
+            PageSize: 10,
+            page: 1,
             meta: {
                 msg: "查询成功！",
                 status: 200

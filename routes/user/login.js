@@ -5,12 +5,36 @@ const jwt = require('jsonwebtoken')
 const {
     tokenReturn
 } = require('../../database/model/token')
+var md5 = require('md5');
 module.exports = async (req, res) => {
     // 接收客户端传递过来的账号和密码
     const {
         username,
         password
     } = req.body
+
+
+    // 加密
+    // let md5Data = md5(username)
+    // let gmcryptSm4 = (password, md5Data) => {
+    //     let sm4Config = {
+    //         key: md5Data.substring(md5Data.length - 16),
+    //         iv: md5Data.substring(md5Data.length - 16),
+    //     };
+    //     let sm4 = new SM4(sm4Config);
+    //     let newPassword = password.trim();
+    //     let text = sm4.encrypt(newPassword);
+    //     // console.log(sm4.decrypt(text), "解密字符串");
+    //     return sm4.encrypt(newPassword);
+    //     // return newPassword
+    // }
+    // let newPassword = gmcryptSm4(password, md5Data)
+    // console.log(data,'datasm4');
+    // console.log(req.body);
+    // return
+
+
+
     // 根据用户名来查询数据库是否存在这个用户
     const findUser = await User.findOne({
         where: {

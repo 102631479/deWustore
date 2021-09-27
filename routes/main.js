@@ -9,6 +9,9 @@ main.post('/user-role/add-role',require('./userRole/addRole'))
 main.get('/user-role/add-role',require('./userRole/getRole'))
 main.put('/user-role/add-role',require('./userRole/putRole'))
 main.delete('/user-role/add-role',require('./userRole/deleRole'))
+// 订单添加
+main.post('/user-role/add-order',require('./ShopOrder/addOrder'))
+main.get('/user-role/add-order',require('./ShopOrder/getOrder'))
 
 
 

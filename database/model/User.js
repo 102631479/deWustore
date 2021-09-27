@@ -1,6 +1,4 @@
 const { Sequelize, sequelize } = require('../init')
-
-
 const User =  sequelize.define('users', {
     username: {
         // 定义类型 字符串
