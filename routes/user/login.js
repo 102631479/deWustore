@@ -12,7 +12,9 @@ module.exports = async (req, res) => {
         username,
         password
     } = req.body
-
+    // console.log(req, res, '接收');
+    console.log(req.body);
+    // return
 
     // 加密
     // let md5Data = md5(username)
@@ -75,7 +77,7 @@ module.exports = async (req, res) => {
             username: username
         }
     })
-    res.status(400).send({
+    res.status(200).send({
         data: {
             username: username,
             token

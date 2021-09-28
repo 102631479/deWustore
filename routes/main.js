@@ -2,16 +2,20 @@ const express = require('express')
 const main = express.Router()
 
 // 用户申请
-main.post('/register',require('./user/register'))
+main.post('/register', require('./user/register'))
 main.post('/login', require('./user/login'))
 // 角色管理
-main.post('/user-role/add-role',require('./userRole/addRole'))
-main.get('/user-role/add-role',require('./userRole/getRole'))
-main.put('/user-role/add-role',require('./userRole/putRole'))
-main.delete('/user-role/add-role',require('./userRole/deleRole'))
+main.post('/user-role/add-role', require('./userRole/addRole'))
+main.get('/user-role/add-role', require('./userRole/getRole'))
+main.put('/user-role/add-role', require('./userRole/putRole'))
+main.delete('/user-role/add-role', require('./userRole/deleRole'))
 // 订单添加
-main.post('/user-role/add-order',require('./ShopOrder/addOrder'))
-main.get('/user-role/add-order',require('./ShopOrder/getOrder'))
+main.post('/user-role/add-order', require('./ShopOrder/addOrder'))
+main.get('/user-role/add-order', require('./ShopOrder/getOrder'))
+main.delete('/user-role/add-order', require('./ShopOrder/getOrder'))
+main.put('/user-role/add-order', require('./ShopOrder/getOrder'))
+
+
 
 
 

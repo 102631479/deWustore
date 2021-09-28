@@ -9,11 +9,17 @@ const main = require('./routes/main')
 // 导入数据库连接
 require('./database/init')
 var morgan = require('morgan');
+
+// 处理josn格式数据
+app.use(express.json());
+
 const {
     tokenReturn
 } = require('./database/model/token')
 // 打印日志访问接口记录
-app.use(morgan('combined'));
+app.use(morgan('dev'));
+// const cors = require("cors");
+// app.use(cors())
 // 设置跨域和相应数据格式  
 app.all('*', function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*')
@@ -23,7 +29,7 @@ app.all('*', function (req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Content-Type,Content-Length, Authorization, Accept,X-Requested-With')
     res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS')
     res.header('X-Powered-By', ' 3.2.1')
-    if (req.method == 'OPTIONS') res.send(200)
+    if (req.Îmethod == 'OPTIONS') res.send(200)
     /*让options请求快速返回*/
     else next()
 })
@@ -106,6 +112,7 @@ app.use(bodyParser.urlencoded({
 // 为main 匹配 地址 /api
 app.use('/api', main)
 // 监听8888 端口
-app.listen(8888, () => {
+app.listen(8888, (res) => {
+    // console.log(res,'监听返回');
     // console.log('youren')
 })
