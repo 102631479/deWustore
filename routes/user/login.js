@@ -82,6 +82,7 @@ module.exports = async (req, res) => {
             username: username,
             token
         },
+        result: 'success',
         meta: {
             msg: "登陆成功",
             status: 200

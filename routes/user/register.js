@@ -31,11 +31,12 @@ module.exports = async (req, res) => {
     })
     // 判断
     if (model) {
-        res.status(400).send({
+        res.status(201).send({
             data: null,
+            status: 500,
             meta: {
                 msg: "用户名已经存在！",
-                status: 400
+                
             }
         })
         return
@@ -50,7 +51,7 @@ module.exports = async (req, res) => {
         username,
         token
     })
-    res.status(201).send({
+    res.status(200).send({
         meta: {
             msg: "创建成功！",
             status: 201
