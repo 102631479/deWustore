@@ -6,22 +6,22 @@ const PlatformAccount = sequelize.define('PlatformAccount', {
     // 用户id
     username: {
         type: Sequelize.STRING,
-        allowNull: true,
+        allowNull: false,
     },
     // 名字
     Rolename: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     // 平台
     RoleType: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     // 手机
     RolePhone: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     // 备注
     RoleRemarks: {

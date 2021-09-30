@@ -45,11 +45,11 @@ module.exports = async (req, res) => {
     })
     // 判断
     if (!findUser) {
-        res.status(400).send({
+        res.status(201).send({
             data: null,
             meta: {
                 msg: "用户名不存在！",
-                status: 400
+                status: 201
             }
         })
         return
@@ -57,11 +57,11 @@ module.exports = async (req, res) => {
     // 判断账号 和 密码 是否正确
 
     if (username != findUser.username || password != findUser.password) {
-        res.status(400).send({
+        res.status(201).send({
             data: null,
             meta: {
                 msg: "账号或者密码不正确！",
-                status: 400
+                status: 201
             }
         })
         return

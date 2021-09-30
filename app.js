@@ -26,10 +26,10 @@ app.all('*', function (req, res, next) {
     res.header('Access-Control-Allow-Headers', 'X-Requested-With, mytoken')
     res.header('Access-Control-Allow-Headers', 'X-Requested-With, Authorization')
     res.setHeader('Content-Type', 'application/json;charset=utf-8')
-    res.header('Access-Control-Allow-Headers', 'Content-Type,Content-Length, Authorization, Accept,X-Requested-With')
-    res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS')
+    res.header('Access-Control-Allow-Headers', 'Content-Type,Content-Length, Authorization, Accept,X-Requested-With,sessionToken')
+    res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE')
     res.header('X-Powered-By', ' 3.2.1')
-    if (req.Îmethod == 'OPTIONS') res.send(200)
+    if (req.method == 'OPTIONS') res.send(200)
     /*让options请求快速返回*/
     else next()
 })
@@ -56,8 +56,11 @@ app.use('/api', (req, res, next) => {
     const usernameData = jwt.decode(token, 'DingNing')
     // 判断客户端是否传递了 token
     // console.log(username, 'username');
+    // console.log(req.headers,'sssssss');
     if (token == 'undefined' || usernameData == null) {
-        res.status(400).send({
+        // next()
+        // return
+        res.status(404).send({
             data: null,
             meta: {
                 msg: "token无效",
