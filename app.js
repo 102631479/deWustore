@@ -55,8 +55,6 @@ app.use('/api', (req, res, next) => {
     // 解析 token 如果解析失败 返回的是 null
     const usernameData = jwt.decode(token, 'DingNing')
     // 判断客户端是否传递了 token
-    // console.log(username, 'username');
-    // console.log(req.headers,'sssssss');
     if (token == 'undefined' || usernameData == null) {
         // next()
         // return

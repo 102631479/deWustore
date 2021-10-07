@@ -23,11 +23,11 @@ module.exports = async (req, res) => {
         }
     })
     if (model) {
-        res.status(400).send({
+        res.status(201).send({
             role: username,
             meta: {
                 msg: "此信息已经存在于这个用户",
-                status: 400
+                status: 201
             }
         })
         return
@@ -43,11 +43,11 @@ module.exports = async (req, res) => {
             ['id']: id,
         }
     }).then(d => {
-        res.status(201).send({
+        res.status(200).send({
             data: username,
             meta: {
                 msg: "修改成功！",
-                status: 201
+                status: 200
             }
         })
     })
